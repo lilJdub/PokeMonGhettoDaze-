@@ -46,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/setdifficulty"
         android:layout_width="147dp"
         android:layout_height="52dp"
         android:text="難度設定"
@@ -57,7 +57,7 @@
         app:layout_constraintVertical_bias="0.544" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/startgame"
         android:layout_width="377dp"
         android:layout_height="82dp"
         android:layout_marginStart="17dp"
@@ -88,5 +88,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="680dp" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
