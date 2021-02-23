@@ -11,11 +11,13 @@ public class fightUFaggot extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fight_u_faggot);
-        setTextArea1();
+        Intent intent = getIntent();
+        int diffe=intent.getIntExtra("diff",1);
+        setTextArea1(diffe);
     }
-
-    private void setTextArea1() {
+    private void setTextArea1(int diffe) {
         TextView textView1=(TextView)findViewById(R.id.textArea1);
-
+        textView1.setText(""+diffe);
     }
+
 }

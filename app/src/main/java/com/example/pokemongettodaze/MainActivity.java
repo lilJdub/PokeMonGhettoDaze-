@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.PopupMenu;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickListener{
     int difficultyGate=1;
@@ -31,6 +32,7 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
     }
     private void goFight(){
         Intent intent=new Intent(this, fightUFaggot.class);
+        intent.putExtra("diff",difficultyGate);
         startActivity(intent);
     }
     private void chooseDifficulty(View v) {
@@ -41,6 +43,7 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
     }
     @Override
     public boolean onMenuItemClick(MenuItem item) {
+        Toast.makeText(this, "Selected Item: " +item.getTitle(), Toast.LENGTH_SHORT).show();
         switch (item.getItemId()) {
             case R.id.easyDifficulty:
                 // do your code
