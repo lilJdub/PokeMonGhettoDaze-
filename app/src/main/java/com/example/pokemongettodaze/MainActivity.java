@@ -1,20 +1,19 @@
 package com.example.pokemongettodaze;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupMenu;
 
-public class MainActivity extends Activity {
-
+public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickListener{
+    int difficultyGate=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        View difficultyLayout=(View)findViewById(R.id.difficultyPopUp);
-        difficultyLayout.setVisibility(View.GONE);
         Button gofight=(Button)findViewById(R.id.startgame);
         gofight.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,7 +25,7 @@ public class MainActivity extends Activity {
         difficulty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                chooseDifficulty();
+                chooseDifficulty(v);
             }
         });
     }
@@ -34,14 +33,29 @@ public class MainActivity extends Activity {
         Intent intent=new Intent(this, fightUFaggot.class);
         startActivity(intent);
     }
-    private void chooseDifficulty(){
-        // create an alert builder
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Name");
-        // set the custom layout
-        final View customLayout = getLayoutInflater().inflate(R.layout.popup, null);
-        builder.setView(customLayout);
+    private void chooseDifficulty(View v) {
+        PopupMenu pp = new PopupMenu(MainActivity.this,v);
+        pp.setOnMenuItemClickListener(MainActivity.this);
+        pp.inflate(R.menu.popup);
+        pp.show();
     }
-
-
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.easyDifficulty:
+                // do your code
+                difficultyGate=0;
+                return true;
+            case R.id.normalDifficulty:
+                // do your code
+                difficultyGate=1;
+                return true;
+            case R.id.hardDifficulty:
+                // do your code
+                difficultyGate=2;
+                return true;
+            default:
+                return false;
+        }
+    }
 }
