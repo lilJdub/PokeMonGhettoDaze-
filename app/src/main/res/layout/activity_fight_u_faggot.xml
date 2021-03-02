@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/battleLayout"
+        android:visibility="gone"
         >
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
@@ -76,7 +77,7 @@
             android:id="@+id/battleText"
             android:layout_width="353dp"
             android:layout_height="104dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="76dp"
             android:text="TextView"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/hubLayout"
-            android:visibility="gone"
+
             >
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline8"

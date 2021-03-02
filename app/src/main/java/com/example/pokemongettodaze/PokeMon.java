@@ -8,7 +8,7 @@ class PokeMon {
         healthpoint=hp;
     }
     public void setName(String nm){
-        nm=name;
+        name=nm;
     }
     public String getName(){
         return name;
